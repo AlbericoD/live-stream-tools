@@ -1,8 +1,7 @@
-module.exports.rollDice = () => {
-  const sides = 6;
-  return Math.floor(Math.random() * sides) + 1;
-};
+module.exports.rollDice = () => `Toma ai teu número: ${Math.floor(Math.random() * 6) + 1} LUL`;
 
-module.exports.fliston = () => {
-  return 'NA Streamer!';
-};
+module.exports.fliston = () => 'NA Streamer!';
+
+module.exports.bobo = () => 'HAHAHAHAHAHAH 4Head';
+
+module.exports.pjl = () => `LILI Cantouuuu, tmj familia PogChamp`;
