@@ -1,7 +1,7 @@
 const { commands } = require('./commands');
 //target = canal aonde o bot envia a mensagem
 module.exports.onMessageHandler = (client, socket, target, context, msg, self) => {
-  if (self) return; // Ignora para o bot
+  // if (self) return; // Ignora para o bot
   // remove o espaço e branco da mensagem
   const commandName = msg.trim();
   // Se o comando for conhecido, execute

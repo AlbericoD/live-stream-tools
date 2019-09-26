@@ -2,9 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon index",
+    "dev": "node index",
     "test": "echo \"Error: no test specified\" && exit 1",
     "inicia-bot": "echo Iniciando o bot && npm start"
   },
@@ -14,5 +15,8 @@
   "dependencies": {
     "socket.io": "^2.3.0",
     "tmi.js": "^1.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
   }
 }

@@ -16,6 +16,10 @@ const commands = [
   {
     name: '!pjl',
     action: skill.pjl
+  },
+  {
+    name: '!java',
+    action: skill.java
   }
 ];
 
