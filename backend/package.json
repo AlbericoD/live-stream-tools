@@ -5,7 +5,7 @@
   "main": "index",
   "scripts": {
     "start": "nodemon index",
-    "dev": "node index",
+    "dev": "node --inspect index",
     "test": "echo \"Error: no test specified\" && exit 1",
     "inicia-bot": "echo Iniciando o bot && npm start"
   },

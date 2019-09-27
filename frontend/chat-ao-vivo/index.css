@@ -3,7 +3,7 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(21, 35, 71, 0.2);
 }
 
 .container {
@@ -17,4 +17,11 @@ body {
   font-size: 30px;
   color: white;
   font-style: italic;
+}
+.container-mensagem {
+  display: flex;
+  align-items: baseline;
+}
+.doispontos {
+  color: white;
 }
