@@ -5,7 +5,7 @@ body {
   overflow: hidden;
   background-color: rgba(21, 35, 71, 0.2);
 }
-
+/* // display: flex, justify-conter:center, flex-wrap:wrap, */
 .container {
   background-color: transparent;
 }
@@ -20,8 +20,15 @@ body {
 }
 .container-mensagem {
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
-.doispontos {
+.doispontos,
+.mensagem {
   color: white;
+}
+.nome-espectador {
+  font-weight: 700;
+}
+.badge {
+  margin-right: 5px;
 }
