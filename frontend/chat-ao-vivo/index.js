@@ -1,19 +1,52 @@
 //cliente escutando as mensagens do socket io
-const QDT_MAXIMA_DE_MENSAGENS = 7;
+const QDT_MAXIMA_DE_MENSAGENS = 12;
 let chat = io.connect('http://localhost:8080');
 let containerDoChat = document.querySelector('.chat');
 let mensagens = [];
-const badgesDB = { ...JSON.parse(dataBadges) }; //json vem do assets
+const badgesDB = { ...JSON.parse(dataBadges)[0].badge_sets }; //json vem do assets
 
-const templatesBadges = () =>
-  `<img src="https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/1" >`;
+const templatesBadges = badge => {
+  if (!badge) return '';
+  let badges = '';
+  let propiedades = Object.keys(badge);
 
-const templateMensagem = ({ badge, nome, color, msg }) =>
+  propiedades.forEach(propiedade => {
+    let url = badgesDB[propiedade].versions['1'].image_url_1x;
+    badges += `<img src=${url} >`;
+  });
+  return badges;
+};
+
+const ehPLayerDeLOL = nome =>
+  nome === 'ana_geek' || nome === 'kiresm17' || nome === 'gedes' || nome === 'x_mahiru'
+    ? `FALA TU ${nome}`
+    : nome;
+
+const verificaCorDoNome = cor => (!cor ? 'white' : cor);
+
+const substituiEmotes = (mensagem, emotes) => {
+  if (emotes === null) return mensagem;
+  let propiedades = Object.keys(emotes);
+
+  propiedades.forEach(propiedade => {
+    let url = `<img class="emote" src=https://static-cdn.jtvnw.net/emoticons/v1/${propiedade}/1.0>`;
+    let posicaoDoEmote = emotes[propiedade][0];
+
+    let posicoes = posicaoDoEmote.split('-').map(posicao => parseInt(posicao));
+    let nomeDoEmote = mensagem.substring(posicoes[0], posicoes[1] + 1);
+    mensagem = mensagem.replace(new RegExp(nomeDoEmote, 'g'), url);
+  });
+  return mensagem;
+};
+
+const templateMensagem = ({ badges, nome, color, msg, emotes }) =>
   `<div class="container-mensagem">
-  <span class="badge">${templatesBadges(badge)}</span>
-  <span class="nome-espectador" style="color:${color}" >${nome}</span><span class="doispontos">:</span>&nbsp;
-  <span class="mensagem">${msg}</span>  
-</div>`;
+      <span class="badge">${templatesBadges(badges)}</span>
+      <span class="nome-espectador" style="color:${verificaCorDoNome(color)}" >${ehPLayerDeLOL(
+    nome
+  )}</span><span class="doispontos">:</span>
+      <span class="mensagem">${substituiEmotes(msg, emotes)}</span>  
+    </div>`;
 
 const inserirMensagem = conteudo => {
   let mensagem = templateMensagem(conteudo);
@@ -27,12 +60,6 @@ const renderizarMensagens = mensagens => {
 };
 
 chat.on('message', mensagemBruta => {
-  console.log({ mensagemBruta });
   inserirMensagem(mensagemBruta);
   renderizarMensagens(mensagens);
 });
-
-// colocar bandeiras do lado do nome, tirar bandeira fake
-// tem que tirar as barras de rolagem
-// faz uma condicao pra se n tiver cor, botar alguma outra
-// substituir os emoticon da mensagem
