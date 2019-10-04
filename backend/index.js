@@ -1,3 +1,4 @@
+require('dotenv').config()
 const { opts, PORT } = require('./config');
 const io = require('socket.io')(PORT);
 const tmi = require('tmi.js');
