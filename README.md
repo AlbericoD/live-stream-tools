@@ -1,6 +1,6 @@
 # OBS-widgets
 
-### Libs de Referencia
+### Libs de Referência
 
 #### Doc TMI JS IRC
 
