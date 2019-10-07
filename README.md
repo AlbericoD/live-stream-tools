@@ -8,7 +8,7 @@ Exemplo:
 
 ![Chat ao vivo gif](https://i.imgur.com/B2MW8Ao.gif)
 
-# `eastegg` (em desenvolvimento)
+# `easter-egg` (em desenvolvimento)
 > Sistema para os espectadores encontrar palavras escondidas no chat e receber prêmios.
 
 ### 📖 Bibliotecas de referência / Reference Libraries
@@ -25,7 +25,7 @@ Exemplo:
 $ npm instal
 ```
 
-⚙️ Configure o arquivo `.env-example` e renomeie para `.env`.
+⚙️ Configure o arquivo `.env.example` e renomeie para `.env`.
 
 
 ### ❗ Objetivo Final / Final goal
