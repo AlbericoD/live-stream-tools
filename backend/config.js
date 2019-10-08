@@ -1,12 +1,10 @@
-const CHANNEL_NAME = 'albericod';
-const BOT_USERNAME = 'ElissandroSilvaOPrimeiroFlistion';
-const OAUTH_TOKEN = 'oauth:7k1p8fvxbzg92hvpsrxe2njhbu1a3n'; //
+module.exports.PORT = process.env.PORT;
 
 // Define configuration options
 module.exports.opts = {
   identity: {
-    username: BOT_USERNAME,
-    password: OAUTH_TOKEN
+    username: process.env.BOT_USERNAME,
+    password: process.env.OAUTH
   },
-  channels: [CHANNEL_NAME]
+  channels: [process.env.CHANNEL_NAME]
 };

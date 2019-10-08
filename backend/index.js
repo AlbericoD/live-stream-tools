@@ -1,22 +1,29 @@
-const io = require('socket.io')(8080);
+require('dotenv').config();
+const { opts, PORT } = require('./config');
+const io = require('socket.io')(PORT);
 const tmi = require('tmi.js');
-//configurações
-const { opts } = require('./config');
 const clientTMI = new tmi.client(opts);
-//fim configurações
-
 const { onConnectedHandler, onMessageHandler } = require('./handlers');
 
-io.on('connection', function(socket) {
+let uniqueSocket = false;
+
+const adicionarEscutadoresAoChat = (client, socket) => {
+  client.on('message', onMessageHandler.bind(null, client, socket));
+  client.on('connected', onConnectedHandler.bind(null, client));
+};
+
+const conectarNoChatDaTwitch = async socket => {
+  try {
+    // await clientTMI.disconnect();
+    adicionarEscutadoresAoChat(clientTMI, socket);
+    await clientTMI.connect();
+  } catch (error) {
+    console.error('deu ruim aqui no chat da twitch man :s');
+  }
+};
+
+io.on('connection', socket => {
+  if (!socket) uniqueSocket = true;
   console.log('socket conectado, esperando mensagens!');
-  // transmitir-mensagens-do-chat-twitch
-  //TODO: EMITIR PELO EVENTOS
-  //ESCUTADOR DE EVENTOS DO CHAT TWITCH
-
-  // Registra os manipuladores de eventos
-
-  clientTMI.on('message', onMessageHandler.bind(null, clientTMI, socket));
-  clientTMI.on('connected', onConnectedHandler.bind(null, clientTMI));
-  // Connectar na Twitch:
-  clientTMI.connect();
+  conectarNoChatDaTwitch(socket);
 });

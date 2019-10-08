@@ -16,17 +16,14 @@ const commands = [
   {
     name: '!pjl',
     action: skill.pjl
+  },
+  {
+    name: '!java',
+    action: skill.java
   }
 ];
 
-module.exports.commands = (client, target, mensagem, socket) => {
-  //verificar se  tem prefixo '!'
-  console.log('MENSAGEM QUE CHEGOU DA TWITCH =>: ', mensagem);
-  // console.log(socket);
-  socket.emit('message', mensagem);
-  // propagarChatTwitch.addListener('chat-twitch', mensagem);
-  // socket.emit('message', commandName);
-  //EMITIR => ESCUTADOR DE EVENTOS DO CHAT TWITCH
+module.exports.commands = (client, target, mensagem) => {
   commands.forEach(command => {
     if (mensagem === command.name) client.say(target, `${command.action()}`);
   });
