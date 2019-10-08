@@ -1,8 +1,23 @@
+const PONTOS_INICIAIS = 20;
 let chat = io.connect('http://localhost:8080');
 let pontosDeVida = document.querySelector('#pontos-de-vida');
-pontosDeVida.textContent = 50;
+let heroi = document.querySelector('.heroi');
+let buttonReset = document.querySelector('.reseta');
 
-const palavrasChaves = [{ palavra: 'kill', pontos: 1 }, { palavra: 'LUL', pontos: 5 }];
+pontosDeVida.textContent = PONTOS_INICIAIS;
+
+buttonReset.addEventListener('click', e => {
+  e.preventDefault();
+  pontosDeVida.textContent = PONTOS_INICIAIS;
+  heroi.textContent = '';
+});
+
+const palavrasChaves = [
+  { palavra: 'kill', pontos: 1 },
+  { palavra: 'LUL', pontos: 5 },
+  { palavra: '4Head', pontos: 8 },
+  { palavra: '!ban cailir', pontos: 15 }
+];
 
 function pesquisaValor(palavra) {
   //pesquisar no array de objetos pontos que a palavra representa
@@ -17,10 +32,13 @@ const contabilizaPontos = palavras => {
   return pontos;
 };
 
-const diminuiPontos = quantidade => {
+const diminuiPontos = (nome, quantidade) => {
   if (!quantidade) return;
   let pontosAtuais = parseInt(pontosDeVida.textContent);
-  pontosDeVida.textContent = Math.max(pontosAtuais - quantidade, 0);
+  let novosPontos = Math.max(pontosAtuais - quantidade, 0);
+  //aqui vou ter que identificar quem foi a pessoa que zerou os pontos de vida
+  if (!novosPontos) heroi.textContent = `Temos um ganhador! ${nome}`;
+  pontosDeVida.textContent = novosPontos;
 };
 
 const verificaPalavraChave = mensagem => {
@@ -33,9 +51,9 @@ const verificaPalavraChave = mensagem => {
   return palavrasEncontradas;
 };
 
-chat.on('message', mensagemBruta => {
+chat.on('message', ({ msg, nome, ...mensagemBruta }) => {
   console.log({ mensagemBruta });
-  let palavras = verificaPalavraChave(mensagemBruta.msg);
+  let palavras = verificaPalavraChave(msg);
   let pontos = contabilizaPontos(palavras);
-  diminuiPontos(pontos);
+  diminuiPontos(nome, pontos);
 });
