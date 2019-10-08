@@ -24,9 +24,10 @@ Exemplo:
 ```bash
 $ npm instal
 ```
-
 ⚙️ Configure o arquivo `.env-example` e renomeie para `.env`.
 
+## Guia de contribuição
+Para contribuir, siga as instruções contidas no [guia de contribuição](CONTRIBUTING.md). Siga também nosso [código de conduta](CODE_OF_CONDUCT.md).
 
 ### ❗ Objetivo Final / Final goal
 
