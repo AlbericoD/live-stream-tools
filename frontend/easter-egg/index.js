@@ -52,7 +52,7 @@ const verificaPalavraChave = mensagem => {
 };
 
 chat.on('message', ({ msg, nome, ...mensagemBruta }) => {
-  console.log({ mensagemBruta });
+  // console.log({ mensagemBruta });
   let palavras = verificaPalavraChave(msg);
   let pontos = contabilizaPontos(palavras);
   diminuiPontos(nome, pontos);
