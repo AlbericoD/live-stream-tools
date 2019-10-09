@@ -22,7 +22,7 @@ Exemplo:
 💡 Instale todos os pacotes do `package.json`.
 
 ```bash
-$ npm instal
+$ npm install
 ```
 ⚙️ Configure o arquivo `.env-example` e renomeie para `.env`.
 
@@ -31,4 +31,4 @@ $ npm instal
 ![Objetivo](./doc/Diagrama-colaboracao.png)
 
 ## Guia de contribuição
-Para contribuir, siga as instruções contidas no [guia de contribuição](CONTRIBUTING.md). Siga também nosso [código de conduta](CODE_OF_CONDUCT.md).
+Para contribuir, siga as instruções contidas no [guia de contribuição](CONTRIBUTING-pt-br.md). Siga também nosso [código de conduta (somente disponível em ingles no momento)](CODE_OF_CONDUCT.md).
