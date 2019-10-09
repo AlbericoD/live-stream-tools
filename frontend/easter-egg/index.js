@@ -4,6 +4,9 @@ let pontosDeVida = document.querySelector('#pontos-de-vida');
 let heroi = document.querySelector('.heroi');
 let buttonReset = document.querySelector('.reseta');
 let quemCausouDano = document.querySelector('.quem-causou-dano');
+const desafiosData = JSON.parse(data);
+console.log(desafiosData);
+debugger;
 
 pontosDeVida.textContent = PONTOS_INICIAIS;
 
