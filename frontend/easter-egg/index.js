@@ -3,6 +3,7 @@ let chat = io.connect('http://localhost:8080');
 let pontosDeVida = document.querySelector('#pontos-de-vida');
 let heroi = document.querySelector('.heroi');
 let buttonReset = document.querySelector('.reseta');
+let quemCausouDano = document.querySelector('.quem-causou-dano');
 
 pontosDeVida.textContent = PONTOS_INICIAIS;
 
@@ -37,7 +38,15 @@ const diminuiPontos = (nome, quantidade) => {
   let pontosAtuais = parseInt(pontosDeVida.textContent);
   let novosPontos = Math.max(pontosAtuais - quantidade, 0);
   //aqui vou ter que identificar quem foi a pessoa que zerou os pontos de vida
-  if (!novosPontos) heroi.textContent = `Temos um ganhador! ${nome}`;
+  if (!pontosAtuais) return;
+  if (!novosPontos) {
+    heroi.textContent = `Temos um ganhador! ${nome}`;
+  } else {
+    quemCausouDano.textContent = `${nome} causou dano!`;
+    setTimeout(() => {
+      quemCausouDano.textContent = '';
+    }, 2000);
+  }
   pontosDeVida.textContent = novosPontos;
 };
 
