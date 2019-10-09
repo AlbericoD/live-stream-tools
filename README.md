@@ -1,4 +1,4 @@
-﻿<h1 align="center"> OBS-widgets </h1>
+﻿<h1 align="center"> live-stream-tools </h1>
 ﻿<p align="center"> Conjunto de ferramentas para transmissões. </p>
 
 # `chat-ao-vivo`
