@@ -10,7 +10,7 @@ const fs = require("fs");
 
 const expressPort = process.env.EXPRESSPORT;
 
-let uniqueSocket = false;
+let added = false;
 
 const adicionarEscutadoresAoChat = (client, socket) => {
   client.on('message', onMessageHandler.bind(null, client, socket));
@@ -21,14 +21,18 @@ const conectarNoChatDaTwitch = async socket => {
   try {
     // await clientTMI.disconnect();
     adicionarEscutadoresAoChat(clientTMI, socket);
-    await clientTMI.connect();
+    if(added) return;
+    else {
+      added = true;
+      await clientTMI.connect();
+    }
   } catch (error) {
     console.error('deu ruim aqui no chat da twitch man :s');
   }
 };
 
 io.on('connection', socket => {
-  if (!socket) uniqueSocket = true;
+  if (!socket) return;
   console.log('socket conectado, esperando mensagens!');
   conectarNoChatDaTwitch(socket);
 });
