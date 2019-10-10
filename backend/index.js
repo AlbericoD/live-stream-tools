@@ -4,6 +4,11 @@ const io = require('socket.io')(PORT);
 const tmi = require('tmi.js');
 const clientTMI = new tmi.client(opts);
 const { onConnectedHandler, onMessageHandler } = require('./handlers');
+const express = require("express");
+const app = express();
+const fs = require("fs");
+
+const expressPort = process.env.EXPRESSPORT;
 
 let uniqueSocket = false;
 
@@ -27,3 +32,16 @@ io.on('connection', socket => {
   console.log('socket conectado, esperando mensagens!');
   conectarNoChatDaTwitch(socket);
 });
+
+//Express
+fs.readdir("../frontend", (err, folders) => {
+  console.log("Arquivos principais expostos:");
+  folders.forEach(folder => {
+    console.log(` ${folder} - http://localhost:${expressPort}/${folder}/index.html`)
+    app.use(`/${folder}`, express.static(`../frontend/${folder}/`));
+  })
+})
+
+app.listen(expressPort, () => {
+  console.log(`Express agora está expondo a porta HTTP ${expressPort}`);
+})
