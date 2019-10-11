@@ -1,14 +1,21 @@
-.container {
-  background: blue;
+body {
+  font-family: 'Arbutus Slab', serif;
+  /* background-color: black; */
 }
+
 #pontos-de-vida,
 .info {
   color: yellow;
   font-size: 50px;
 }
 .heroi {
-  color: purple;
-  font-size: 16px;
+  color: #ffffff;
+  font-size: 15px;
+  text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
+.quem-causou-dano {
+  color: white;
+  text-shadow: 0 0 2px yellow;
 }
 .reseta {
   background-color: #4caf50; /* Green */
@@ -19,4 +26,42 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+#progressBar {
+  background-color: black;
+  border-radius: 13px;
+  padding: 3px;
+  width: 200px;
+  padding-left: 20px;
+  position: relative;
+}
+
+#progressBar > div {
+  background-color: red;
+  width: 70%;
+  height: 20px;
+  border-radius: 10px;
+}
+
+#progressBar > span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  position: absolute;
+  left: 50%;
+  top: 5px;
+  transform: translate(-30%);
+  color: white;
+}
+
+#heart {
+  width: 50px;
+  position: absolute;
+  top: -14px;
+  left: -10px;
+  z-index: 100;
+}
+.hp-bar {
+  position: relative;
 }

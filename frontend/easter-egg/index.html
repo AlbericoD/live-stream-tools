@@ -3,16 +3,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Arbutus+Slab&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="animation.css" />
     <link rel="stylesheet" href="index.css" />
     <title>Easter Egg</title>
   </head>
   <body>
     <div class="container">
-      <div class="info">PONTOS DE VIDA PRA ACABA <span id="pontos-de-vida">0</span></div>
+      <div class="hp-bar">
+        <img src="img/giphy.gif" alt="" id="heart" />
+        <div id="progressBar">
+          <span id="pontos-de-vida">
+            <span class="pv-atual">0</span> / <span class="pv-inicial">100</span></span
+          >
+          <div class="sangue"></div>
+        </div>
+      </div>
     </div>
     <p class="heroi"></p>
     <p class="quem-causou-dano"></p>
-    <button class="reseta">Reseta os Pontos</button>
+    <!-- <button class="reseta">Reseta os Pontos</button> -->
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
   <script src="desafios.json"></script>
