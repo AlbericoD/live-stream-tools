@@ -1,34 +1,34 @@
 ﻿<h1 align="center"> live-stream-tools </h1>
-﻿<p align="center"> Conjunto de ferramentas para transmissões. </p>
+﻿<p align="center"> Livestream toolkit</p>
 
 # `chat-ao-vivo`
-> Projeto para mostrar em tempo real o chat na transmissão.
+> Project to show real-time chat on the broadcast.
 
-Exemplo:
+Example: 
 
 ![Chat ao vivo gif](https://i.imgur.com/B2MW8Ao.gif)
 
-# `easter-egg` (em desenvolvimento)
-> Sistema para os espectadores encontrar palavras escondidas no chat e receber prêmios.
+# `easter-egg` (under development)
+> A system for viewers to find hidden words in chat and receive prizes.
 
-### 📖 Bibliotecas de referência / Reference Libraries
+### 📖 Reference Libraries
 
-| Nome/Name   | Link          |
+| Name   | Link          |
 | ------------- | ------------- |
 |  Doc TMI JS IRC  | https://github.com/tmijs/docs/blob/gh-pages/_posts/v1.4.2/2019-03-03-Commands.md#connect  |
 | Doc Twitch Chat IRC | https://dev.twitch.tv/docs/irc |
 
-### 🚀 Fácil e rápido
-💡 Instale todos os pacotes do `package.json`.
+### 🚀 Easy and Fast
+💡 Install all packages from `package.json`.
 
 ```bash
 $ npm install
 ```
-⚙️ Configure o arquivo `.env-example` e renomeie para `.env`.
+⚙️ Set up the `.env-example` file and rename it to `.env`.
 
-### ❗ Objetivo Final / Final goal
+### ❗ Final goal
 
-![Objetivo](./doc/Diagrama-colaboracao.png)
+![Objetivo](./doc/Diagram.png)
 
-## Guia de contribuição
-Para contribuir, siga as instruções contidas no [guia de contribuição](CONTRIBUTING-pt-br.md). Siga também nosso [código de conduta (somente disponível em ingles no momento)](CODE_OF_CONDUCT.md).
++## Contribution Guide
+To contribute, follow the instructions that can be found in the [contribution guide](CONTRIBUTING.md). Also follow our [code of conduct (at the moment available only in English](CODE_OF_CONDUCT.md).
