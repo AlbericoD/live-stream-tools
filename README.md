@@ -30,5 +30,5 @@ $ npm install
 
 ![Objetivo](./doc/Diagram.png)
 
-+## Contribution Guide
+## Contribution Guide
 To contribute, follow the instructions that can be found in the [contribution guide](CONTRIBUTING.md). Also follow our [code of conduct (at the moment available only in English](CODE_OF_CONDUCT.md).
