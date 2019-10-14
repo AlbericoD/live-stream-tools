@@ -1,14 +1,14 @@
 ﻿<h1 align="center"> live-stream-tools </h1>
 ﻿<p align="center"> Livestream toolkit</p>
 
-# `chat-ao-vivo`
+# `Live-Chat`
 > Project to show real-time chat on the broadcast.
 
 Example: 
 
 ![Chat ao vivo gif](https://i.imgur.com/B2MW8Ao.gif)
 
-# `easter-egg` (under development)
+# `Easter-Egg` (under development)
 > A system for viewers to find hidden words in chat and receive prizes.
 
 ### 📖 Reference Libraries
