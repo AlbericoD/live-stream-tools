@@ -7,7 +7,7 @@ Sinta-se à vontade para enviar problemas e solicitações de aprimoramento atra
 Como contribuir?
 ------------
 
-Por favor, verifique as [diretrizes de contribuição] (CONTRIBUTING.md) para enviar correções e adições. Em geral, seguimos o fluxo de trabalho Git "fork-and-pull".
+Por favor, verifique as [diretrizes de contribuição](CONTRIBUTING-pt-br.md) para enviar correções e adições. Em geral, seguimos o fluxo de trabalho Git "fork-and-pull".
 
   1. **Fork** o repositório no GitHub
   2. **Clone** o projeto em sua própria máquina
