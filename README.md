@@ -26,9 +26,9 @@ $ npm install
 ```
 ⚙️ Set up the `.env-example` file and rename it to `.env`.
 
-### ❗ Final goal
+### ❗ Application fluxogram
 
-![Objetivo](./doc/Diagram.png)
+![Application fluxogram](./doc/EN-live-stream-tools-fluxograma.png)
 
 ## Contribution Guide
 To contribute, follow the instructions that can be found in the [contribution guide](CONTRIBUTING.md). Also follow our [code of conduct (at the moment available only in English](CODE_OF_CONDUCT.md).
