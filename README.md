@@ -22,7 +22,7 @@ Example:
 💡 Install all packages from `package.json`.
 
 ```bash
-$ npm install
+$ npm install or npm i
 ```
 ⚙️ Set up the `.env-example` file and rename it to `.env`.
 
